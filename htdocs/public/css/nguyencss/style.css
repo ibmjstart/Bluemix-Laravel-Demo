@@ -1,0 +1,547 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+html{
+    background-color: #fff;
+    color: #000;
+    font-family: 'Roboto','Arial',sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+}
+
+/*-------------------------*/
+/* PHAN DE SU DUNG LAI CHO PRJ KHAC*/
+/*-------------------------*/
+h1,h2{
+    
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+   
+}
+
+h1 {
+    margin: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 340%;
+     word-spacing: 8px;
+}
+
+h2{
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+}
+
+h2:after{
+    display: block;
+    height: 2px;
+    background-color: #e67e22;
+    content: " ";
+    width: 120px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+h3{
+    text-align: center;
+}
+
+.row{
+    max-width: 1140px;
+    margin: 0 auto;
+    clear: both;
+}
+
+.box{
+    padding: 3%;
+}
+
+.box p{
+    font-size: 80%;
+    line-height: 155%;
+    margin-top: 5%;
+}
+
+section{
+    padding: 60px 0;
+    
+}
+
+
+header{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.59),rgba(0, 0, 0, 0.59)),url(img/hero.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.hero-text-box{
+    position: absolute;
+    width: 1140px;
+    top: 35%;
+    left:10%;
+
+    
+}
+.logo{
+    height: 100px;
+    width: auto;
+    margin: 8% 5% 20% 0%;
+    margin-right: 50px;
+
+}
+.sub-navbar{
+    position: fixed;
+    width: 100%;
+    height: 13%;
+    background-color: #F0E5D7;
+}
+
+
+.logo-sub{
+   float: left;
+    width: 5%;
+    margin-left: 10%;
+    margin-top: 1%;
+    margin-bottom: 5%;
+}
+
+.sub-nav{
+    margin-top: 2%;
+    margin-right: 10%;
+    float: right;
+    list-style: none;
+    margin-bottom: 5%;
+}
+
+.sub-nav li a:link,
+.sub-nav li a:visited{
+    padding: 8px;
+    color: #121111;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 110%;
+    transition: border-bottom 0.2s;
+}
+
+.main-nav{
+
+    margin-top: 40px;
+    position: fixed;
+    float: left;
+    list-style: none;
+    margin-left: 15%;
+}
+
+.main-nav li,.sub-nav li{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited{
+    z-index: 99999999;
+    padding: 8px;
+    color: #D4B8B8;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 150%;
+    transition: border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active,
+.sub-nav li a:hover,
+.sub-nav li a:active{
+    border-bottom: 2px solid #e67e22;
+}
+
+
+input{
+    border-radius: 10px;
+    font-size: 12px;
+    padding: 8px;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+#modal{
+    display: none;
+    padding: 20px;
+    border-radius:25px; 
+    margin-top: 20px;
+    max-width:700px; 
+    background: rgba(255, 255, 255,1);
+
+}
+
+
+
+/*-------------------------*/
+/* HEADER */
+/*-------------------------*/
+button,.btn:link,
+.btn:visited {
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    transition: background-color 1s, color 1s;
+}
+
+button,.btn:hover,
+.btn:active{
+    background-color: #cf6d17;
+}
+
+button,.btn-full:link,
+.btn-full:visited{
+    background-color: #e67e22;
+    border: 1px solid #e67e22;
+    color: #fff;
+    margin-right: 15px;
+}
+
+button,.btn-ghost:link,
+.btn-ghost:visited{
+    border: 1px solid #e67e22;
+    color: #e67e22;
+}
+
+button,.btn-full:hover,
+.btn-full:active{
+    background-color: #cf6d17;
+}
+
+button,.btn-ghost:hover,
+.btn-ghost:active{
+    background-color: #cf6d17;
+    color: #fff;
+}
+
+/*-------------------------*/
+/* BUTTON */
+/*-------------------------*/
+.bar{
+    display: none;
+     background-color: white;
+    height: 25px;
+    padding: 3px;
+    width: 350px;       
+    border-radius: 5px;
+    box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444; 
+    
+}
+
+
+.bar-fill{
+    display: inline-block;
+    height: 100%;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+    transition: width 6s ease-in-out; 
+    background-color: orange;
+    background-image: linear-gradient(top, #fecf23, #fd9215); 
+    background-size: 30px 30px;
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+                        transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+                        transparent 75%, transparent);            
+    
+    animation: animate-stripes 3s linear infinite;
+}
+/*-------------------------*/
+/* Progress Bar */
+/*-------------------------*/
+
+.icon-big{
+    display: block;
+    text-align: center;
+    color: #e67e22;
+    font-size: 300%;
+}
+
+/*-------------------------*/
+/* ICON */
+/*-------------------------*/
+
+.grid-meal{
+    clear: both;   
+}
+
+
+.grid-col1{
+    width: 25%;
+    float: left;
+    overflow: hidden;
+    height: auto;
+    overflow: hidden;   
+}
+
+.grid-col2{
+    width: 25%;
+    float: left;
+    height: auto;
+    overflow: hidden;
+}
+.grid-col3{
+    width: 25%;
+    float: left;
+    height: auto;
+    overflow: hidden;
+}
+
+.grid-col4{
+    width: 25%;
+    float: left;
+    height: auto;
+    overflow: hidden;
+}
+.grid-meal img{
+    position: relative;
+    width: 100%;
+    height: auto;
+    transition: transform 1s, opacity 0.5s;
+    padding-right: 2px;
+    padding-left: 2px;
+}
+
+
+
+.grid-meal img:hover{
+    opacity: 0.9;
+    padding-right: 2px;
+    padding-left: 2px;
+    transform: scale(1.04);
+    overflow: hidden;
+    
+}
+
+
+.grid:hover .text{
+    opacity: 1;
+    z-index: 9999;
+}
+
+.meals-showcase{
+    list-style: none;
+    width: 100%;
+}
+.meals-showcase li{
+    display: block;
+    float: left;
+    width: 25%;
+     
+}
+
+.meal-photo{
+    width: 100%;
+    margin: 0; 
+
+}
+
+.meal-photo img{
+    opacity: 0.7;
+    width: 100%;
+    padding: 20px 20px 5px 20px;
+    height: 220px;
+    transform: scale(1.1);
+    transition: transform 1s, opacity 1s;
+}
+
+.meal-photo img:hover{
+    opacity: 1;
+    transform: scale(1.04);
+}
+
+.next-photo{
+    margin-top: 20px;
+    font-size: 150%;
+    margin-bottom: 20px;
+}
+
+.next-photo a{
+    text-decoration: none;
+    color: #030303;
+}
+/*-------------------------*/
+/* MEALS */
+/*-------------------------*/
+
+footer{
+    background-color: #333;
+    
+    clear: both;
+}
+
+.footer-nav li{
+    float:left;
+    list-style: none; 
+    margin: 10px;
+    
+}
+.footer-nav li a:link,
+.footer-nav li a:visited{
+    text-decoration: none;
+    color: #888;
+    transition: color 0.5s;
+}
+
+.social-links li{
+    float:right;
+    list-style: none; 
+    margin: 10px;
+}
+
+.social-links li a{
+    text-decoration: none;
+    font-size: 100%;
+    color: #888;    
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active{
+    padding-bottom: 5px;
+    border-bottom: 2px solid #f48e18;
+    color:#000000;   
+}
+
+
+.ion-social-facebook:hover{
+color: #3b5988;
+}
+
+.ion-social-twitter:hover{
+color: #00aced;
+}
+
+.ion-social-instagram:hover{
+color: #3f729b;
+}
+
+.ion-social-googleplus:hover{
+color: #dd4b39;
+}
+
+
+
+
+
+/*-------------------------*/
+/* Footer */
+/*-------------------------*/
+footer{
+    background-color: #F0E5D7;
+    clear: both;
+}
+
+.photo-container{
+    width: 70%;
+    height: auto;
+    float: left;
+}
+
+.photo-container img{
+    width: 100%;
+    margin-top: 10px;
+}
+
+.description-container{
+    float: right;
+    width: 26%;
+    margin-left: 10px;
+    background-color: #F0E5D7;
+    border: 1px solid #E0AB7C;
+    box-shadow: 5px 5px 5px rgba(132, 108, 99, 0.39);
+    padding: 15px;
+    font-size: 15px;
+    color: #846C63;
+    font-family: 'Abel',sans-serif;
+}
+
+/*-------------------------*/
+/* Specify-Photo */
+/*-------------------------*/
+
+.comment{
+    
+    font-size: 13px;
+    clear: both;
+    width: 67%;
+    margin: 0% 0% 0 3%;
+    
+}
+
+.comment b{
+font-size: 16px;
+}
+.status-meals{   
+    margin-bottom: 15px;
+}
+.like-meals{
+    margin-bottom: 10px;
+}
+
+.comment-meals{
+    margin-left: 10px;
+    padding: 5px;
+    background-color: #f1f8ff;
+    margin-bottom: 1px;
+}
+
+
+/*-------------------------*/
+/* Photo-Comment */
+/*-------------------------*/
+
+.self-information{
+    width: 70%;
+    margin-left:10%; 
+    padding-top: 10%;
+}
+.self-avarta img{
+    width: 23%;
+    height: auto;
+    float:left;
+    padding: 5px;
+    border: 1px solid #c7d0d9;
+}
+
+.self-address{
+      width: 74%;
+    float: right;
+    font-size: 17px;
+    margin-top: 5%;
+}
+
+.self-address b{
+    font-size: 20px;
+}
+
+.self-album{
+    clear: both;
+    margin-bottom: 10%;
+}
+
+
+.self-album img{
+    width: 19%;
+     float:left;
+    padding: 5px;
+    max-height: 110px;
+    overflow: hidden;
+    
+}
+
+/*-------------------------*/
+/* self-info */
+/*-------------------------*/
