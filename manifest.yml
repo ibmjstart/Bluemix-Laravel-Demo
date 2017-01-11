@@ -1,8 +1,10 @@
 ---
 applications:
 - name: goldi
+  random-route: true
   memory: 128M
   buildpack: https://github.com/cloudfoundry/php-buildpack
   env:
+    APP_DEBUG: false
     CF_STAGING_TIMEOUT: 15
     CF_STARTUP_TIMEOUT: 15

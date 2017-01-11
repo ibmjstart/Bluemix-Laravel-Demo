@@ -5,14 +5,15 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=5.5.9",
-        "laravel/framework": "5.1.*"
+        "php": ">=5.6.4",
+        "laravel/framework": "5.3.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~4.0",
-        "phpspec/phpspec": "~2.1"
+        "phpunit/phpunit": "~5.0",
+        "symfony/css-selector": "3.1.*",
+        "symfony/dom-crawler": "3.1.*"
     },
     "autoload": {
         "classmap": [
@@ -28,24 +29,32 @@
         ]
     },
     "scripts": {
-        "post-install-cmd": [
-            "php htdocs/artisan clear-compiled",
-            "php htdocs/artisan optimize"
-        ],
-        "post-update-cmd": [
-            "php htdocs/artisan clear-compiled",
-            "php htdocs/artisan optimize"
-        ],
         "post-root-package-install": [
-            "php -r \"copy('.env.example', '.env');\""
+            "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
+            "php htdocs/artisan key:generate"
+        ],
+        "post-install-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postInstall",
+            "mkdir -p /tmp/app/htdocs/bootstrap/cache",
+            "mkdir -p /tmp/app/htdocs/storage/framework/sessions",
+            "mkdir -p /tmp/app/htdocs/storage/framework/views",
+            "mkdir -p /tmp/app/htdocs/storage/framework/cache",
+            "php htdocs/artisan optimize",
+            "php htdocs/artisan key:generate"
+        ],
+        "post-update-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "mkdir -p /tmp/app/htdocs/bootstrap/cache",
+            "mkdir -p /tmp/app/htdocs/storage/framework/sessions",
+            "mkdir -p /tmp/app/htdocs/storage/framework/views",
+            "mkdir -p /tmp/app/htdocs/storage/framework/cache",
+            "php htdocs/artisan optimize",
             "php htdocs/artisan key:generate"
         ]
     },
     "config": {
         "preferred-install": "dist"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
