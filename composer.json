@@ -37,11 +37,21 @@
         ],
         "post-install-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postInstall",
-            "php htdocs/artisan optimize"
+            "mkdir -p /tmp/app/htdocs/bootstrap/cache",
+            "mkdir -p /tmp/app/htdocs/storage/framework/sessions",
+            "mkdir -p /tmp/app/htdocs/storage/framework/views",
+            "mkdir -p /tmp/app/htdocs/storage/framework/cache",
+            "php htdocs/artisan optimize",
+            "php htdocs/artisan key:generate"
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "php htdocs/artisan optimize"
+            "mkdir -p /tmp/app/htdocs/bootstrap/cache",
+            "mkdir -p /tmp/app/htdocs/storage/framework/sessions",
+            "mkdir -p /tmp/app/htdocs/storage/framework/views",
+            "mkdir -p /tmp/app/htdocs/storage/framework/cache",
+            "php htdocs/artisan optimize",
+            "php htdocs/artisan key:generate"
         ]
     },
     "config": {
